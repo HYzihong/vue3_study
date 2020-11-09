@@ -1,0 +1,7 @@
+build/*.js
+src/assets
+src/*.d.ts
+public
+dist
+node_modules
+.idea
