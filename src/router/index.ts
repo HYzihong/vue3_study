@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-05-19 20:36:49
+ * @LastEditTime: 2021-05-19 21:07:02
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /vue3-study/src/router/index.ts
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 
@@ -6,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/test",
+    name: "Test",
+    component: () => import(/* webpackChunkName: "test" */ "../views/Test.vue"),
   },
   {
     path: "/about",
