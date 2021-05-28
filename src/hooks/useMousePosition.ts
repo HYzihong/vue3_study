@@ -1,14 +1,19 @@
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, Ref, ref } from "vue";
 
 /*
  * @Author: your name
  * @Date: 2021-05-25 23:10:32
- * @LastEditTime: 2021-05-25 23:21:01
+ * @LastEditTime: 2021-05-28 09:39:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vue3-study/src/hooks/useMouse.ts
  */
-function useMousePosition() {
+interface mousePosition {
+  x: Ref<number>;
+  y: Ref<number>;
+}
+// 解决报错（没有返回值） warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+function useMousePosition(): mousePosition {
   const x = ref(0);
   const y = ref(0);
   const updateMouse = (e: MouseEvent) => {
